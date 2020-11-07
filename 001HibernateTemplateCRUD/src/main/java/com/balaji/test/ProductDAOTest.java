@@ -3,6 +3,7 @@ package com.balaji.test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.balaji.dao.ProductDAO;
 import com.balaji.model.Product;
 
 public class ProductDAOTest {
@@ -14,6 +15,10 @@ public class ProductDAOTest {
 		product.setPname("Test");
 		product.setPid(1);
 		product.setPcost(23000.0);
+		
+		ProductDAO productDAO = (ProductDAO) applicationContext.getBean("productDAO");
+		productDAO.add(product);
+		System.out.println(productDAO.findAllPnames());
 		
 	}
 

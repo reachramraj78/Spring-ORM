@@ -12,5 +12,9 @@ public interface ProductDAO {
 	Product findById(int pid);
 	List<Product> findAll();
 	
+	//SELECT PNAME FROM PRODUCT;
+	
+	List<String> findAllPnames();
+	
 
 }
